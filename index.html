@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+	<h1>JS-Filter-List</h1><br/>
+
+	<!-- Full List -->
+	<input type="text" id="productFilter" onkeyup="filterProducts()" placeholder="Search Products">
+
+	<ul id="productList">
+		<li><a href="#" class="productCategory">A</a></li>
+		<li><a href="#">Apple</a></li>
+		<li><a href="#">Apricot</a></li>
+		<li><a href="#">Artichoke</a></li>
+
+		<li><a href="#" class="productCategory">B</a></li>
+		<li><a href="#">Banana</a></li>
+		<li><a href="#">Bicycle</a></li>
+		<li><a href="#">Butterfly</a></li>
+
+		<li><a href="#" class="productCategory">C</a></li>
+		<li><a href="#">Candy</a></li>
+		<li><a href="#">Car</a></li>
+		<li><a href="#">Caterpillar</a></li>
+	</ul>
+
+	<script>
+
+	function filterProducts() {
+
+		// Declare variables
+		var input, filter, ul, li, a, i;
+		input = document.getElementById('productFilter');
+		filter = input.value.toUpperCase();
+		ul = document.getElementById('productList');
+		li = ul.getElementsByTagName('li');
+
+		// Loop through all list items, hide those who don't match the search query
+		for (i = 0; i < li.length; i++) {
+			a = li[i].getElementsByTagName('a')[0];
+			if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+				li[i].style.display = "";
+			} else {
+				li[i].style.display = "none";
+			}
+		}
+	};
+
+	</script>
+</body>
+</html>
