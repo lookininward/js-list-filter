@@ -1,10 +1,35 @@
 [
   {
   	"name" : "Michael", 
-  	"age" : "27"},
+  	"age" : "27"
+  },
   {
   	"name" : "Jason",
   	"age" : "18"
+  },
+  {
+  	"name" : "Sylver", 
+  	"age" : "25"
+  },
+  {
+  	"name" : "Yomi",
+  	"age" : "26"
+  },
+   {
+  	"name" : "Michael", 
+  	"age" : "27"
+  },
+  {
+  	"name" : "Alice",
+  	"age" : "22"
+  },
+   {
+  	"name" : "Niel", 
+  	"age" : "24"
+  },
+  {
+  	"name" : "Ross",
+  	"age" : "30"
   }
 ]
 
