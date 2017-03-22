@@ -57,11 +57,30 @@ function captureInput() {
 	input = document.getElementById('teamFilter');
 	filter = input.value.toUpperCase();
 	console.log(filter);
+
+	filterProducts();
 }
 
 
 // Use the input to filter through the generated table
+function filterProducts() {
 
+	// Declare variables
+	var ul, li, a, i;
+
+	ul = document.getElementById('listOfNames');
+	li = ul.getElementsByTagName('li');
+
+	// Loop through all list items, hide those who don't match the search query
+	for (i = 0; i < li.length; i++) {
+		a = li[i].getElementsByTagName('a')[0];
+		if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+			li[i].style.display = "";
+		} else {
+			li[i].style.display = "none";
+		}
+	}
+};
 
 // function filterTeam() {
 
