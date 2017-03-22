@@ -27,26 +27,31 @@ function AJAXrequest() {
 
 AJAXrequest();
 
-
 // Build the table
 // Create List
 function CreateList(items) {
 
 		console.log(items[1]);
 		
-		output = "<ul id='listOfNames'>";
+		output = "<table id='listOfNames'>";
 		for (var key in items) {
-			output += '<li><a href="#">' + items[key].name + " " + items[key].age + '</a></li>';
+			output += '<tr>'
+			output += '<td>' + items[key].name + '</td>';
+			output += '<td>' + items[key].order_no + '</td>';
+			output += '<td>' + items[key].diameter + '</td>';
+			output += '<td>' + items[key].length + '</td>';
+			output += '<td>' + items[key].shank_diameter + '</td>';
+			output += '<td>' + items[key].overall_length + '</td>';
+			output += '<td>' + items[key].price + '</td>';
+			output += '</tr>';
 		}
-		output += "</ul>";
+		output += "</table>";
 
 		document.getElementById('update').innerHTML = output;
 }
 
-
-
 // Initialize a function when there is input into the search bar
-document.getElementById('teamFilter').onkeyup = captureInput;
+document.getElementById('productFilter').onkeyup = captureInput;
 
 // Hold the search bar input as a global variable
 var filter = "";
@@ -54,47 +59,39 @@ var filter = "";
 // Capture the search bar input
 function captureInput() {
 	var input;
-	input = document.getElementById('teamFilter');
+	input = document.getElementById('productFilter');
 	filter = input.value.toUpperCase();
 	console.log(filter);
 
 	filterProducts();
 }
 
-
 // Use the input to filter through the generated table
 function filterProducts() {
 
 	// Declare variables
-	var ul, li, a, i;
+	var table, tr, td, i;
 
-	ul = document.getElementById('listOfNames');
-	li = ul.getElementsByTagName('li');
+	table = document.getElementById('listOfNames');
+	tr = table.getElementsByTagName('tr');
 
 	// Loop through all list items, hide those who don't match the search query
-	for (i = 0; i < li.length; i++) {
-		a = li[i].getElementsByTagName('a')[0];
-		if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-			li[i].style.display = "";
+	// currently only filtering by the first TD, want to filter by all
+	for (i = 0; i < tr.length; i++) {
+		td = tr[i].getElementsByTagName('td')[0];
+		if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+			tr[i].style.display = "";
 		} else {
-			li[i].style.display = "none";
+			tr[i].style.display = "none";
 		}
 	}
 };
-
-// function filterTeam() {
-
-// 	// CreateList();
-// }
-
-
-
-
-
-
 
 // Next Step
 // Now the JSON data (all of it) gets parsed and sent out in the request.send,
 // I want it to filter the data when its still inside the ajax request (taking the input); then sent out
 // AJAX request holds all the parsed data
 // parsing of the data should happen through CreateList(); instead of outputting it then parsing it, parse it then output it
+
+// Implement Express + Database
+// Switch from JSON data to database
