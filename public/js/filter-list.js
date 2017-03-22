@@ -11,7 +11,7 @@ function AJAXrequest() {
 	}
 
 	// Gather Data
-	request.open('GET', 'json/data.json');
+	request.open('GET', 'data/data.json');
 
 	request.onreadystatechange = function() {
 		if ((request.readyState === 4) && (request.status === 200)) {
