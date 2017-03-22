@@ -5,9 +5,9 @@
 <body>
 	
 	<!-- Filter List -->
-	<div id="filter-list">
+<!-- 	<div id="filter-list">
 		<h1>JS-Filter-List</h1><br/>
-		<input type="text" id="productFilter" onkeyup="filterProducts()" placeholder="Search Products">
+		<input type="text" id="productFilter" placeholder="Search Products">
 		<ul id="productList">
 			<li><a href="#" class="productCategory">A</a></li>
 			<li><a href="#">Apple</a></li>
@@ -22,26 +22,33 @@
 			<li><a href="#">Car</a></li>
 			<li><a href="#">Caterpillar</a></li>
 		</ul>
-	</div>
+	</div> -->
 
 	<!-- Filter Team Members -->
-	<div id="filter-team">
+<!-- 	<div id="filter-team">
 		<h1>Filter JSON Data - List</h1><br/>
-		<input type="text" id="teamFilter" onkeyup="filterTeamMembers()" placeholder="Search Team">
+		<input type="text" id="teamFilter" placeholder="Search Team">
+		<div id="update"></div>
+	</div> -->
+
+	<!-- Filter Team Members - Table -->
+<!-- 	<div id="filter-team-list">
+		<h1>Filter JSON Data - Table</h1><br/>
+		<input type="text" id="teamFilterTable" placeholder="Search Team">
+		<div id="update2"></div>
+	</div> -->
+
+	<!-- Filter Team Members -->
+	<div id="filter-team-alternate">
+		<h1>Filter JSON Data - List - Alternate</h1><br/>
+		<input type="text" id="teamFilterAlternate" placeholder="Search Team">
 		<div id="update"></div>
 	</div>
 
-	<!-- Filter Team Members - Table -->
-	<div id="filter-team-list">
-		<h1>Filter JSON Data - Table</h1><br/>
-		<input type="text" id="teamFilterTable" onkeyup="filterTeamMembers_Table()" placeholder="Search Team">
-		<div id="update2"></div>
-	</div>
-
-	<!-- Filter Team Members -->
-	<script type="text/javascript" src="ajax.js"></script>
+	
 	<!-- Filter Products -->
 	<script type="text/javascript" src="filter-list.js"></script>
-
+	<!-- Filter Team Members -->
+	<script type="text/javascript" src="ajax.js"></script>
 </body>
 </html>
