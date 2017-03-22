@@ -147,3 +147,5 @@ AJAXrequest();
 // Next Step
 // Now the JSON data (all of it) gets parsed and sent out in the request.send,
 // I want it to filter the data when its still inside the ajax request (taking the input); then sent out
+// AJAX request holds all the parsed data
+// parsing of the data should happen through CreateList(); instead of outputting it then parsing it, parse it then output it
