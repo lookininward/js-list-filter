@@ -36,7 +36,7 @@ function CreateList(items) {
 		
 		output = "<ul id='listOfNames'>";
 		for (var key in items) {
-			output += '<li><a href="#">' + items[key].name + '</a></li>';
+			output += '<li><a href="#">' + items[key].name + " " + items[key].age + '</a></li>';
 		}
 		output += "</ul>";
 
