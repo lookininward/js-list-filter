@@ -2,9 +2,15 @@ var express = require('express');
 var app = express();
 
 app.set('port', process.env.PORT || 3000);
-app.use(express.static('app/public')); // serves up the index.html in public folder
+app.set('view engine', 'ejs');
+app.set('views', 'app/views');
+
+// Routes 
+// Static Directory to access css, js, etc.
+app.use(express.static('app/public'));
 app.use(require('./routes/index')); // correctly routes to routes/index.js; issues with rendering index.html from there on
 
+// Run Express Server
 var server = app.listen(app.get('port'), function() {
 	console.log('Listening on port ' + app.get('port'));
 });
@@ -27,7 +33,4 @@ var server = app.listen(app.get('port'), function() {
 // // });
 
 // connection.end();
-
-
-console.log(__dirname);
 

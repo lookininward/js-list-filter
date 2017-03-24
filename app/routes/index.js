@@ -3,7 +3,9 @@ var router = express.Router();
 
 router.get('/', function(req, res) {
 
-	res.sendFile('/Users/Michael/Desktop/js-list-filter/app/public/'); // routing correctly, but breaking js scripts links
+	res.render('index', {
+		pageTitle: 'Home',
+	});
 });
 
 module.exports = router;
