@@ -15,6 +15,19 @@ var server = app.listen(app.get('port'), function() {
 	console.log('Listening on port ' + app.get('port'));
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Establish Connection with Database
 // var mysql = require('mysql');
 // var connection = mysql.createConnection({
